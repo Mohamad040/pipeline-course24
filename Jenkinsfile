@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Clone Project') {
             steps {
-                git url: 'https://github.com/your-username/your-project.git', branch: 'main'
+                git url: 'https://github.com/BS-PM-2025/BS-PM-2025-TEAM24.git', branch: 'main'
             }
         }
 
