@@ -10,6 +10,12 @@ pipeline {
     }
 
     stages {
+        stage('Clone Project') {
+            steps {
+                git url: 'https://github.com/your-username/your-project.git', branch: 'main'
+            }
+        }
+
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
@@ -22,14 +28,14 @@ pipeline {
             }
             post {
                 always {
-                    junit 'junit.xml'  /
+                    junit 'junit.xml'
                 }
             }
         }
 
         stage('Run Website') {
             steps {
-                sh 'npm start & sleep 10' // run in background for testing
+                sh 'npm start & sleep 10'
                 echo 'Website is running (simulated)'
             }
         }
